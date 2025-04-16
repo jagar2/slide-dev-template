@@ -58,7 +58,8 @@ layout: mainer
 title: "What is Slidev?"
 ---
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+# <span style="font-family: 'Playfair Display';">Test Azo Sans Font</span>
+
 
 - 📝 **Text-based** - focus on the content with Markdown, and then style them later
 - 🎨 **Themable** - themes can be shared and re-used as npm packages
