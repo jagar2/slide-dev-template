@@ -24,13 +24,14 @@
 
   </div>
 </template>
-
 <script setup lang="ts">
 import { useSlide } from '@slidev/client'
 
 const { meta } = useSlide()
 const background = meta.background ?? ''
 const backgroundFit = meta.backgroundFit ?? 'cover'
+const backgroundColor = meta.backgroundColor ?? 'black'
+</script>
 const backgroundColor = meta.backgroundColor ?? 'black'
 </script>
 

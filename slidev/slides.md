@@ -53,7 +53,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
-layout: full-branding-layout
+layout: fullbranding
 background: /assets/full-branding.png
 ---
 
@@ -95,7 +95,7 @@ h1 {
 Here is another comment.
 -->
 ---
-layout: full-branding-layout
+layout: facter
 background: /assets/full-branding.png
 backgroundFit: cover
 backgroundColor: black
