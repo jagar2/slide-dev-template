@@ -1,6 +1,6 @@
 ---
 # You can also start simply with 'default'
-theme: default
+theme: ./theme
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: ./assets/title_image.png
@@ -20,10 +20,11 @@ drawings:
 transition: fade-out
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
+
 # open graph
 # seoMeta:
 #  ogImage: https://cover.sli.dev
----  
+---
 
 # Add Title Here
 
@@ -53,8 +54,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
-layout: fullbranding
-background: /assets/full-branding.png
+layout: fact
 ---
 
 
