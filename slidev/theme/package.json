@@ -22,7 +22,8 @@
     "colorSchema": "light",
     "defaults": {
       "fonts": {
-        "sans": "Signika Negative",
+        "title": "Hello Bird",
+        "sans": "Hello Bird",
         "serif": "Sigmar One",
         "mono": "Fira Code"
       }
