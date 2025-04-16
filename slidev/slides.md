@@ -54,11 +54,9 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
-layout: fact
+layout: mainer
+title: "What is Slidev?"
 ---
-
-
-# What is Slidev?
 
 Slidev is a slides maker and presenter designed for developers, consist of the following features
 
@@ -578,20 +576,14 @@ database "MySql" {
 Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML Diagrams](https://sli.dev/features/plantuml)
 
 ---
-
 foo: bar
 dragPos:
+  square: 135,455,0,0
 square: 691,32,167,\_,-16
-
 ---
 
-dragPos:
-square: 0,-1,0,0
-
----
 dragPos:
   square: 0,-1,0,0
----
 
 # Draggable Elements
 
