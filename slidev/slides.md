@@ -1,9 +1,9 @@
 ---
 # You can also start simply with 'default'
-theme: seriph
+theme: default
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
+background: ./assets/title_image.png
 # some information about your slides (markdown enabled)
 title: Add Title Here
 info: |
@@ -17,19 +17,22 @@ class: text-center
 drawings:
   persist: false
 # slide transition: https://sli.dev/guide/animations.html#slide-transitions
-transition: slide-left
+transition: fade-out
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
 # open graph
 # seoMeta:
 #  ogImage: https://cover.sli.dev
----
+---  
 
 # Add Title Here
 
 ## Joshua C. Agar
+
 ### Drexel University
+
 #### Department of Mechanical Engineering and Mechanics
+
 #### {{ new Date().toLocaleDateString() }}
 
 <!-- <div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
@@ -50,8 +53,10 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
+layout: full-branding-layout
+background: /assets/full-branding.png
+---
 
-## transition: fade-out
 
 # What is Slidev?
 
@@ -89,14 +94,25 @@ h1 {
 <!--
 Here is another comment.
 -->
-
+---
+layout: full-branding-layout
+background: /assets/full-branding.png
+backgroundFit: cover
+backgroundColor: black
 ---
 
+# This Should Work
+
+✅ Background image  
+✅ Fallback color  
+✅ Debug box shows resolved values
+
+---
 transition: slide-up
+background: '#2B90B6'
 level : 2
-
 ---
-
+  
 # Navigation
 
 Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
@@ -122,10 +138,8 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
 <p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
 
 ---
-
 layout: two-cols
 layoutClass: gap-16
-
 ---
 
 # Table of contents
@@ -143,10 +157,8 @@ The title will be inferred from your slide content, or you can override it with 
 <Toc text-sm minDepth="1" maxDepth="2" />
 
 ---
-
 layout: image-right
 image: https://cover.sli.dev
-
 ---
 
 # Code
@@ -570,6 +582,11 @@ Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML D
 foo: bar
 dragPos:
 square: 691,32,167,\_,-16
+
+---
+
+dragPos:
+square: 0,-1,0,0
 
 ---
 dragPos:
