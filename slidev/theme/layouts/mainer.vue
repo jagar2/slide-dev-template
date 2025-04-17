@@ -14,7 +14,7 @@ defineProps({
     >
       <h1 style="text-align: left;">{{ title }}</h1>
     </div>
-    <div class="main-body" style="position: absolute; top: 15%; left: 2.5%; width: 95%; height: 73%; border: 1px solid black;">
+    <div class="main-body" style="position: absolute; top: 15%; left: 2.5%; width: 95%; height: 73%; border: 1px solid black; text-align: left;">
       <slot />
     </div>
   </div>

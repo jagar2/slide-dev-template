@@ -41,9 +41,6 @@ mdc: true
 </div> -->
 
 <div class="abs-br m-6 text-xl">
-  <!-- <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
-    <carbon:edit />
-  </button> -->
   <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
     <carbon:logo-github />
   </a>
@@ -60,7 +57,6 @@ title: "What is Slidev?"
 
 # <span style="font-family: 'Playfair Display';">Test Azo Sans Font</span>
 
-
 - 📝 **Text-based** - focus on the content with Markdown, and then style them later
 - 🎨 **Themable** - themes can be shared and re-used as npm packages
 - 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
@@ -70,8 +66,11 @@ title: "What is Slidev?"
 - 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
   <br>
   <br>
+<center>
 
 Read more about [Why Slidev?](https://sli.dev/guide/why)
+
+</center>
 
 <!--
 You can have `style` tag in markdown to override the style for the current page.
@@ -129,7 +128,7 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
 
 <img
   v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
+  class="absolute -bottom-10 -left-7 w-1000 opacity-50"
   src="https://sli.dev/assets/arrow-bottom-left.svg"
   alt=""
 />
