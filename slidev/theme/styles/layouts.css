@@ -1,9 +1,17 @@
 .slidev-layout {
-  h1, h2, h3 {
-    @apply font-san-serif;
+  h1 {
+    font-family: var(--slidev-font-h1);
+  }
+  
+  h2 {
+    font-family: var(--slidev-font-h2) uppercase;
   }
 
-  h1 + p {
+  h3 {
+    font-family: var(--slidev-font-h3);
+  }
+
+  /* h1 + p {
     @apply -mt-4 opacity-50 mb-4 font-serif;
   }
 
@@ -21,5 +29,5 @@
 
   ul {
     list-style: disc;
-  }
+  } */
 }

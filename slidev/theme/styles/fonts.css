@@ -14,7 +14,45 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Malonet';
+    src: url('../fonts/Malonet.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Papernotes';
+    src: url('../fonts/Papernotes.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Anthonio';
+    src: url('../fonts/AnthonioScript.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Papernotes Sketch';
+    src: url('../fonts/Papernotes.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Random Wednesday';
+    src: url('../fonts/Random Wednesday.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 :root {
---slidev-font-sans: 'azo-sans-web', "Playfair Display", 'Hello Bird', 'Signika Negative', sans-serif;
+--slidev-font-h1: 'Hello Bird';
+--slidev-font-h2: 'Papernotes';
+--slidev-font-h3: 'Papernotes';
 }
