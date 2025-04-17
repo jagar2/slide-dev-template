@@ -10,11 +10,11 @@ defineProps({
 <template>
   <div class="slidev-layout mainer">
     <div
-      style="position: absolute; z-index: 100; left: 2.5%; top: 2.5%; width: 95%; height: 10%; transform-origin: left left; transform: rotate(0deg); border: 1px solid black;"
+      style="position: absolute; z-index: 100; left: 2.5%; top: 1%; width: 95%; height: 10%; transform-origin: left left; transform: rotate(0deg); border: 1px solid black;"
     >
       <h1 style="text-align: left;">{{ title }}</h1>
     </div>
-    <div class="main-body" style="position: absolute; top: 15%; left: 2.5%; width: 95%; height: 73%; border: 1px solid black; text-align: left;">
+    <div class="main-body" style="position: absolute; top: 13%; left: 2.5%; width: 95%; height: 75%; border: 1px solid black; text-align: left;">
       <slot />
     </div>
   </div>
