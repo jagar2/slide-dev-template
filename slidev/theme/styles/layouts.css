@@ -31,3 +31,9 @@
     list-style: disc;
   } */
 }
+
+.title-large {
+  @apply text-left text-5xl font-bold leading-tight tracking-tight text-primary;
+  font-family: var(--slidev-font-sans, sans-serif);
+  margin-bottom: 1.5rem;
+}
