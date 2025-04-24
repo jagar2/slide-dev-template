@@ -79,7 +79,11 @@ layout: layout-body-w-text
 titleText: "My Custom Title"
 ---
 
-Main content goes here.
+<img
+  class="w-full h-full object-cover"
+  src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true"
+  alt=""
+/>
 
 ::text::
 
