@@ -70,9 +70,6 @@ title-text: "What is Slidedsfsdfsdfdsfdsfv?"
 - 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
 - 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
 
-<br>
-<br>
-
 <p style="text-align: center;">
   Read more about [Why Slidev?](https://sli.dev/guide/why)
 </p>
