@@ -80,9 +80,9 @@ titleText: "My Custom Title"
 ---
 
 <img
-  class="w-full h-full object-cover"
+  class="w-full h-full object-contain"
   src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true"
-  alt=""
+  alt="Slidev Theme Preview"
 />
 
 ::text::
