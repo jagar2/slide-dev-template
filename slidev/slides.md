@@ -74,6 +74,16 @@ title-text: "What is Slidedsfsdfsdfdsfdsfv?"
   Read more about [Why Slidev?](https://sli.dev/guide/why)
 </p>
 
+---
+layout: layout-body-w-text
+titleText: "My Custom Title"
+---
+
+Main content goes here.
+
+::text::
+
+Footer content goes here.
 <!--
 Here is another comment.
 -->
