@@ -126,8 +126,8 @@ const props = defineProps({
 
 /* Footer Content Section */
 .footer-content {
-  grid-row: 4;
   @apply px-10 py-5 overflow-auto;
   border: 1px solid black;
+  grid-row: 4;
 }
 </style>
