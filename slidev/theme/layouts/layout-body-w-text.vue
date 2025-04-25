@@ -13,10 +13,20 @@ const props = defineProps({
 
 <template>
   <div class="slidev-layout mainer">
-    <!-- Title Section -->
-    <div class="title-section">
+    <div
+      style="
+        position: absolute;
+        z-index: 100;
+        left: 2.5%;
+        top: 1%;
+        width: 95%;
+        height: 10%;
+        transform-origin: left left;
+        border: 1px solid black;
+      "
+    >
       <div class="title-large">
-        {{ titleText }}
+        {{  titleText }}
       </div>
     </div>
 
@@ -43,7 +53,7 @@ const props = defineProps({
   background-position: center;
   background-size: cover;
   display: grid;
-  grid-template-rows: 10% 60% 30%;
+  grid-template-rows: 5% 75% 20%;
 }
 
 /* Title Section */
