@@ -75,23 +75,6 @@ title-text: "What is Slidedsfsdfsdfdsfdsfv?"
 </p>
 
 ---
-layout: layout-body-w-text
-titleText: "My Custom Title"
----
-
-<img
-  class="w-full h-full object-contain"
-  src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true"
-  alt="Slidev Theme Preview"
-/>
-
-::text::
-
-Footer content goes here.
-<!--
-Here is another comment.
-
----
 layout: layout-body-w-text-subtitle
 titleText: "My Title"
 subtitleText: "My Subtitle"
@@ -107,9 +90,9 @@ layout: ncolumns
 titleText: "My Multi-Column Layout"
 columns: 3
 images: 
-  - "https://example.com/image1.png"
-  - "https://example.com/image2.png"
-  - "https://example.com/image3.png"
+  - "https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true"
+  - "https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true"
+  - "https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true"
 titles:
   - "First Image"
   - "Second Image"
@@ -117,6 +100,7 @@ titles:
 ---
 
 ::text::
+
 Footer content goes here.
 
 
@@ -143,17 +127,6 @@ imageOrder: 1
 
 image 600x600
 
-<BarBottom  title="Slidev theme purplin">
-  <Item text="slidevjs/slidev">
-    <carbon:logo-github />
-  </Item>
-  <Item text="Slidevjs">
-    <carbon:logo-twitter />
-  </Item>
-  <Item text="sli.dev">
-    <carbon:link />
-  </Item>
-</BarBottom>
 -->
 ---
 layout: facter

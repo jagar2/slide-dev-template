@@ -43,7 +43,7 @@ const headerRatio = 100 - props.contentRatio - props.footerRatio
 
     <!-- Main Content Section -->
     <div class="main-content">
-      <div class="columns-container" :style="{ gridTemplateColumns: `repeat(${columns}, 1fr)` }">
+      <div class="columns-container" :style="{ gridTemplateColumns: `repeat(${columns}, 1fr)`}">
         <div v-for="(image, index) in images" :key="index" class="column">
           <div v-if="titles[index]" class="column-title">
             {{ titles[index] }}
@@ -138,5 +138,9 @@ const headerRatio = 100 - props.contentRatio - props.footerRatio
   grid-row: 3;
   @apply px-10 py-5 overflow-auto;
   border: 1px solid black;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 </style> 
