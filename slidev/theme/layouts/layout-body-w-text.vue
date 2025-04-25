@@ -4,33 +4,28 @@ const props = defineProps({
     type: String,
     default: 'Default Title',
   },
+  image: {
+    type: String,
+    required: false,
+  }
 })
 </script>
 
 <template>
   <div class="slidev-layout mainer">
-   
     <!-- Title Section -->
-    <div
-      style="
-        position: absolute;
-        z-index: 100;
-        left: 2.5%;
-        top: 1%;
-        width: 95%;
-        height: 10%;
-        transform-origin: left left;
-        border: 1px solid black;
-      "
-    >
+    <div class="title-section">
       <div class="title-large">
-        {{  titleText }}
+        {{ titleText }}
       </div>
     </div>
 
     <!-- Main Content Section (2/3 Height) -->
     <div class="main-content">
-      <slot />
+      <div class="image-container">
+        <img v-if="image" :src="image" class="proportional-image rounded-2xl border-image" />
+        <slot v-else></slot>
+      </div>
     </div>
 
     <!-- Footer Content Section (1/3 Height) -->
@@ -72,6 +67,25 @@ const props = defineProps({
   grid-row: 2;
   @apply px-10 py-5 border-b border-black overflow-auto;
   border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image Container */
+.image-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Proportional Image */
+.proportional-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 /* Footer Content Section */
@@ -79,6 +93,5 @@ const props = defineProps({
   grid-row: 3;
   @apply px-10 py-5 overflow-auto;
   border: 1px solid black;
-
 }
 </style>

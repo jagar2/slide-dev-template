@@ -90,6 +90,41 @@ titleText: "My Custom Title"
 Footer content goes here.
 <!--
 Here is another comment.
+
+---
+layout: layout-body-w-text
+titleText: "My Custom Title"
+image: "https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true"
+---
+
+::text::
+
+Footer content goes here.
+
+
+---
+layout: image-x
+image: 'https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true'
+imageOrder: 1
+---
+
+# layout: image-x
+
+imageOrder: 1
+
+image 600x600
+
+<BarBottom  title="Slidev theme purplin">
+  <Item text="slidevjs/slidev">
+    <carbon:logo-github />
+  </Item>
+  <Item text="Slidevjs">
+    <carbon:logo-twitter />
+  </Item>
+  <Item text="sli.dev">
+    <carbon:link />
+  </Item>
+</BarBottom>
 -->
 ---
 layout: facter
