@@ -17,6 +17,7 @@ const props = defineProps({
 
 <template>
   <div class="slidev-layout mainer">
+    <!-- Title Section (Absolutely Positioned) -->
     <div
       style="
         position: absolute;
@@ -27,10 +28,14 @@ const props = defineProps({
         height: 10%;
         transform-origin: left left;
         border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        text-align: center;
       "
     >
       <div class="title-large">
-        {{  titleText }}
+        {{ titleText }}
       </div>
     </div>
 
@@ -41,7 +46,7 @@ const props = defineProps({
       </div>
     </div>
 
-    <!-- Main Content Section (2/3 Height) -->
+    <!-- Main Content Section -->
     <div class="main-content">
       <div class="image-container">
         <img v-if="image" :src="image" class="proportional-image rounded-2xl border-image" />
@@ -49,7 +54,7 @@ const props = defineProps({
       </div>
     </div>
 
-    <!-- Footer Content Section (1/3 Height) -->
+    <!-- Footer Content Section -->
     <div class="footer-content">
       <slot name="text" />
     </div>
@@ -64,28 +69,13 @@ const props = defineProps({
   background-position: center;
   background-size: cover;
   display: grid;
-  grid-template-rows: 5% 10% 65% 20%;
-}
-
-/* Title Section */
-.title-section {
-  position: absolute;
-  top: 1%;
-  left: 2.5%;
-  width: 95%;
-  height: 10%;
-  z-index: 100;
-  transform-origin: left left;
-  border: 1px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  text-align: center;
+  grid-template-rows: 10% 65% 25%;
+  padding-top: 10%; /* To account for the absolutely positioned title */
 }
 
 /* Subtitle Section */
 .subtitle-section {
-  grid-row: 2;
+  grid-row: 1;
   @apply px-10 py-2;
   display: flex;
   align-items: center;
@@ -100,7 +90,7 @@ const props = defineProps({
 
 /* Main Content Section */
 .main-content {
-  grid-row: 3;
+  grid-row: 2;
   @apply px-10 py-5 border-b border-black overflow-auto;
   border: 1px solid black;
   display: flex;
@@ -126,8 +116,12 @@ const props = defineProps({
 
 /* Footer Content Section */
 .footer-content {
-  @apply px-10 py-5 overflow-auto;
+  grid-row: 3;
   border: 1px solid black;
-  grid-row: 4;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1rem;
 }
 </style>
