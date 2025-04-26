@@ -82,7 +82,10 @@ image: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5
 ---
 
 ::text::
-Footer content goes here.
+
+- athkjkasda
+- skdla;sd
+- akdlskd
 
 ---
 layout: ncolumns

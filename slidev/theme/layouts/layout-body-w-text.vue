@@ -39,7 +39,7 @@ const props = defineProps({
     </div>
 
     <!-- Footer Content Section (1/3 Height) -->
-    <div class="footer-content">
+    <div class="main-body">
       <slot name="text" />
     </div>
   </div>
@@ -54,6 +54,7 @@ const props = defineProps({
   background-size: cover;
   display: grid;
   grid-template-rows: 5% 75% 20%;
+  @apply text-center py-15 h-full grid;
 }
 
 /* Title Section */
@@ -75,7 +76,7 @@ const props = defineProps({
 /* Main Content Section */
 .main-content {
   grid-row: 2;
-  @apply px-10 py-5 border-b border-black overflow-auto;
+  @apply border-black overflow-auto;
   border: 1px solid black;
   display: flex;
   align-items: center;
@@ -101,7 +102,6 @@ const props = defineProps({
 /* Footer Content Section */
 .footer-content {
   grid-row: 3;
-  @apply px-10 py-5 overflow-auto;
   border: 1px solid black;
 }
 </style>
