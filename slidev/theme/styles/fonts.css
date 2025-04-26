@@ -50,9 +50,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Dream Orphans";
+    src: url('../fonts/Dream Orphans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 :root {
---slidev-font-h1: 'Hello Bird';
+--slidev-font-h1: 'Random Wednesday';
 --slidev-font-h2: 'Papernotes';
 --slidev-font-h3: 'Papernotes';
 }

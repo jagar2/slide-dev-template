@@ -33,9 +33,10 @@
 }
 
 .title-large {
-  @apply text-left text-5xl font-bold leading-tight tracking-tight text-primary;
-  font-family: var(--slidev-font-sans, sans-serif);
-  margin-bottom: 1.5rem;
+  @apply text-center font-bold leading-tight tracking-tight text-primary;
+  font-size: 2rem; /* Changed from 1pt to 2rem for better visibility */
+  font-family: var(--slidev-font-h1, sans-serif);
+  margin-bottom: 10 pt;
   background-color: #07294D;
   background-image: linear-gradient(45deg, #07294D 10%, #006699 20%);
   background-size: 100%;

@@ -27,6 +27,14 @@ const props = defineProps({
   footerHeight: {
     type: [String, Number],
     default: 25
+  },
+  showTitle: {
+    type: Boolean,
+    default: true
+  },
+  showSubtitle: {
+    type: Boolean,
+    default: true
   }
 })
 </script>
@@ -34,7 +42,7 @@ const props = defineProps({
 <template>
   <div class="slidev-layout mainer">
     <!-- Title Section (Absolutely Positioned) -->
-    <div
+    <div v-if="showTitle"
       style="
         position: absolute;
         z-index: 100;
@@ -48,6 +56,7 @@ const props = defineProps({
         align-items: center;
         justify-content: left;
         text-align: center;
+        border: 1px solid black;
       "
     >
       <div class="title-large">
@@ -56,7 +65,7 @@ const props = defineProps({
     </div>
 
     <!-- Subtitle Section -->
-    <div class="subtitle-section">
+    <div v-if="showSubtitle" class="subtitle-section">
       <div class="subtitle-text">
         {{ subtitleText }}
       </div>
@@ -85,8 +94,8 @@ const props = defineProps({
   background-position: center;
   background-size: cover;
   display: grid;
-  grid-template-rows: v-bind('`${titleHeight}% ${mainHeight}% ${footerHeight}%`');
-  padding-top: v-bind('`${titleHeight}%`');
+  grid-template-rows: v-bind('`${showSubtitle ? titleHeight : 0}% ${mainHeight}% ${footerHeight}%`');
+  padding-top: v-bind('`${showSubtitle ? titleHeight : 0}%`');
 }
 
 /* Subtitle Section */
