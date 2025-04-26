@@ -43,7 +43,7 @@ const props = defineProps({
         width: 95%;
         height: 10%;
         transform-origin: left left;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         display: flex;
         align-items: center;
         justify-content: left;
@@ -65,7 +65,7 @@ const props = defineProps({
     <!-- Main Content Section -->
     <div class="main-content">
       <div class="image-container">
-        <img v-if="image" :src="image"/>
+        <img v-if="image" :src="image" class="proportional-image"/>
         <slot v-else></slot>
       </div>
     </div>
@@ -102,6 +102,7 @@ const props = defineProps({
 .subtitle-text {
   @apply text-2xl font-semibold;
   color: #2B90B6;
+  border: none; /* Remove any border to prevent a light gray box */
 }
 
 /* Main Content Section */
@@ -112,7 +113,7 @@ const props = defineProps({
   justify-content: center;
   margin: 0;
   padding: 0px;
-  box-sizing: border-box;
+  border: none; /* Remove any border to prevent a light gray box */
 }
 
 .image-container img {
@@ -120,6 +121,7 @@ const props = defineProps({
   max-height: 100%;
   object-fit: contain;
   border-radius: 8px; /* Add rounded border to the image */
+  border: none; /* Remove any border to prevent a light gray box */
 }
 
 /* Image Container */
@@ -129,6 +131,7 @@ const props = defineProps({
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none; /* Remove any border to prevent a light gray box */
 }
 
 /* Proportional Image */
@@ -136,6 +139,7 @@ const props = defineProps({
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  border: none; /* Remove any border to prevent a light gray box */
 }
 
 /* Footer Content Section */
