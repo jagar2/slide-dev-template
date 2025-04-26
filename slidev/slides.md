@@ -86,6 +86,23 @@ image: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5
 - athkjkasda
 - skdla;sd
 - akdlskd
+  
+---
+layout: layout-body-w-text-subtitle
+titleText: "My Title"
+subtitleText: "My Subtitle"
+image: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5fe-4200-9ea7-34315b1764da.jpg"
+lineSpacing: 1.2
+titleHeight: 25   # Increase title section height
+mainHeight: 70     # Increase main content height
+footerHeight: 5   # Decrease footer height
+---
+
+::text::
+
+- First item
+- Second item
+- Third item
 
 ---
 layout: ncolumns
