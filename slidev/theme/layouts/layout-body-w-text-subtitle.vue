@@ -55,16 +55,16 @@ const props = defineProps({
         width: 95%;
         height: 10%;
         transform-origin: left left;
-        /* border: 1px solid black; */
         display: flex;
         align-items: center;
         justify-content: left;
         text-align: center;
         border: 1px solid black;
-        margin-bottom: 0pt;
+        margin: 0;
+        padding: 0;
       "
     >
-      <div class="title-large" :style="{ fontSize: `${titleFontSize}pt` }">
+      <div class="title-large" :style="{ fontSize: `${titleFontSize}pt`, margin: 0, padding: 0 }">
         {{ titleText }}
       </div>
     </div>
