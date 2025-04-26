@@ -35,6 +35,10 @@ const props = defineProps({
   showSubtitle: {
     type: Boolean,
     default: true
+  },
+  titleFontSize: {
+    type: [String, Number],
+    default: 28
   }
 })
 </script>
@@ -57,9 +61,10 @@ const props = defineProps({
         justify-content: left;
         text-align: center;
         border: 1px solid black;
+        margin-bottom: 0pt;
       "
     >
-      <div class="title-large">
+      <div class="title-large" :style="{ fontSize: `${titleFontSize}pt` }">
         {{ titleText }}
       </div>
     </div>
@@ -106,6 +111,7 @@ const props = defineProps({
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin: 0pt
 }
 
 .subtitle-text {

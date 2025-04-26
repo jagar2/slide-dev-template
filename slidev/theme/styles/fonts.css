@@ -57,8 +57,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Coolvetica";
+    src: url('../fonts/Coolvetica.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
---slidev-font-h1: 'Random Wednesday';
+--slidev-font-h1: 'Coolvetica';
 --slidev-font-h2: 'Papernotes';
 --slidev-font-h3: 'Papernotes';
 }
