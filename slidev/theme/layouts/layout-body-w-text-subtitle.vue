@@ -107,7 +107,6 @@ const props = defineProps({
 /* Subtitle Section */
 .subtitle-section {
   grid-row: 1;
-  @apply px-10 py-2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,7 +115,8 @@ const props = defineProps({
 }
 
 .subtitle-text {
-  @apply text-2xl font-semibold;
+  font-weight: semibold;
+  font-size: 20pt;
   color: #2B90B6;
   border: none; /* Remove any border to prevent a light gray box */
 }
