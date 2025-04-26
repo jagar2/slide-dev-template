@@ -15,6 +15,18 @@ const props = defineProps({
   lineSpacing: {
     type: [String, Number],
     default: 1.2
+  },
+  titleHeight: {
+    type: [String, Number],
+    default: 10
+  },
+  mainHeight: {
+    type: [String, Number],
+    default: 65
+  },
+  footerHeight: {
+    type: [String, Number],
+    default: 25
   }
 })
 </script>
@@ -73,8 +85,8 @@ const props = defineProps({
   background-position: center;
   background-size: cover;
   display: grid;
-  grid-template-rows: 10% 65% 25%;
-  padding-top: 10%; /* To account for the absolutely positioned title */
+  grid-template-rows: v-bind('`${titleHeight}% ${mainHeight}% ${footerHeight}%`');
+  padding-top: v-bind('`${titleHeight}%`');
 }
 
 /* Subtitle Section */
