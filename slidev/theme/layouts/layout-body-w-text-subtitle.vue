@@ -111,7 +111,7 @@ const props = defineProps({
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
+  margin: 3px;
   padding: 0px;
   border: none; /* Remove any border to prevent a light gray box */
 }
@@ -122,6 +122,7 @@ const props = defineProps({
   object-fit: contain;
   border-radius: 8px; /* Add rounded border to the image */
   border: none; /* Remove any border to prevent a light gray box */
+  margin: 1px;
 }
 
 /* Image Container */
@@ -132,6 +133,7 @@ const props = defineProps({
   align-items: center;
   justify-content: center;
   border: none; /* Remove any border to prevent a light gray box */
+  margin: 10px;
 }
 
 /* Proportional Image */
@@ -140,6 +142,7 @@ const props = defineProps({
   max-height: 100%;
   object-fit: contain;
   border: none; /* Remove any border to prevent a light gray box */
+  margin: 3px;
 }
 
 /* Footer Content Section */
