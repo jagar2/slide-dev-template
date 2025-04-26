@@ -65,7 +65,7 @@ const props = defineProps({
     <!-- Main Content Section -->
     <div class="main-content">
       <div class="image-container">
-        <img v-if="image" :src="image" class="proportional-image rounded-2xl border-image" />
+        <img v-if="image" :src="image"/>
         <slot v-else></slot>
       </div>
     </div>
@@ -107,11 +107,19 @@ const props = defineProps({
 /* Main Content Section */
 .main-content {
   grid-row: 2;
-  @apply px-10 py-5 border-b border-black overflow-auto;
-  border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px; /* Add rounded border to the image */
 }
 
 /* Image Container */
