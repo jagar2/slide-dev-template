@@ -122,6 +122,16 @@ const props = defineProps({
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 1rem;
+  padding: 0;
+}
+
+/* List styling in footer */
+.footer-content ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-content li {
+  line-height: 1.2;
 }
 </style>
