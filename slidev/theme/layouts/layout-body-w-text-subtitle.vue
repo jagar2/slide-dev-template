@@ -11,6 +11,10 @@ const props = defineProps({
   image: {
     type: String,
     required: false,
+  },
+  lineSpacing: {
+    type: [String, Number],
+    default: 1.2
   }
 })
 </script>
