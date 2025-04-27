@@ -1,4 +1,6 @@
 <script setup>
+import LayoutFooter from "../components/citation.vue";
+
 const props = defineProps({
   titleText: {
     type: String,
