@@ -51,15 +51,16 @@ const props = defineProps({
         position: absolute;
         z-index: 100;
         left: 2.5%;
-        top: 1%;
+        top: 2.5%;
         width: 95%;
-        height: 10%;
+        height: 30pt;
         transform-origin: left left;
         display: flex;
-        align-items: center;
+        /* align-items: center; */
         justify-content: left;
-        text-align: center;
+        /* text-align: center; */
         border: 1px solid black;
+        overflow: visible;
         margin: 0;
         padding: 0;
       "
