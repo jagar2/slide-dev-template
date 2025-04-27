@@ -75,7 +75,7 @@ title-text: "What is Slidedsfsdfsdfdsfdsfv?"
 </p>
 
 ---
-layout: custom-layout
+layout: main-custom-layout
 titleText: "My Title"
 subtitleText: "My Subtitle"
 image: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5fe-4200-9ea7-34315b1764da.jpg"
@@ -87,7 +87,7 @@ image: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5
 - line 3
 
 ---
-layout: custom-layout
+layout: main-custom-layout
 titleText: "No Subtitle"
 image: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5fe-4200-9ea7-34315b1764da.jpg"
 ---
@@ -96,6 +96,81 @@ image: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5
 - line 1
 - line 2
 - line 3
+
+
+---
+layout: two-column
+titleText: "Comparison of Methods"
+subtitleText: "Experimental vs Simulation"
+leftHeading: "Experimental Setup"
+rightHeading: "Simulated Model"
+leftImage: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5fe-4200-9ea7-34315b1764da.jpg"
+rightImage: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5fe-4200-9ea7-34315b1764da.jpg"
+columns: 2
+---
+
+::left::
+
+
+::right::
+
+::text::
+- Additional insights and discussions.
+
+---
+layout: two-column
+titleText: "Comparison of Methods"
+subtitleText: "Experimental vs Simulation"
+leftHeading: "Experimental Setup"
+rightHeading: "Simulated Model"
+leftImage: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5fe-4200-9ea7-34315b1764da.jpg"
+rightImage: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5fe-4200-9ea7-34315b1764da.jpg"
+columns: 2
+---
+
+::left::
+
+
+::right::
+
+::text::
+- Additional insights and discussions.
+- 
+---
+layout: two-column
+titleText: "Comparison of Methods"
+subtitleText: "Experimental vs Simulation"
+rightHeading: "Simulated Model"
+leftImage: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5fe-4200-9ea7-34315b1764da.jpg"
+rightImage: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5fe-4200-9ea7-34315b1764da.jpg"
+columns: 2
+---
+
+::left::
+
+
+::right::
+
+::text::
+- Additional insights and discussions.
+
+
+---
+layout: two-column
+titleText: "Comparison of Methods"
+subtitleText: "Experimental vs Simulation"
+leftImage: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5fe-4200-9ea7-34315b1764da.jpg"
+rightImage: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5fe-4200-9ea7-34315b1764da.jpg"
+columns: 2
+---
+
+::left::
+
+
+::right::
+
+::text::
+- Additional insights and discussions.
 
 
 ---
