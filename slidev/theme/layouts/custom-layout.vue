@@ -6,7 +6,8 @@ const props = defineProps({
   titleText: { type: String, default: 'Default Title' },
   subtitleText: { type: String, default: '' },
   image: { type: String, required: false },
-  headerHeight: { type: [String, Number], default: 15 },
+  headerHeight: { type: [String, Number], default: 7.5 },
+  subtitleHeight: { type: [String, Number], default: 7.5 },
   mainHeight: { type: [String, Number], default: 55 },
   textboxHeight: { type: [String, Number], default: 15 },
   spacerHeight: { type: [String, Number], default: 10 },
@@ -19,7 +20,10 @@ const props = defineProps({
     <!-- Header -->
     <div class="flex flex-col justify-center gap-2">
       <h1 class="text-5xl font-bold text-[#24527a] leading-tight m-0 text-left">{{ titleText }}</h1>
-      <h2 v-if="subtitleText" class="text-2xl font-semibold text-[#2B90B6] leading-snug m-0 text-center">{{ subtitleText }}</h2>
+    </div>
+
+    <div v-if="subtitleText" class="flex flex-col justify-center gap-2">
+      <h2 class="text-2xl font-semibold text-[#2B90B6] leading-snug m-0 text-center">{{ subtitleText }}</h2>
     </div>
 
     <!-- Main Image Area -->
@@ -60,6 +64,6 @@ const props = defineProps({
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  grid-template-rows: v-bind('`${headerHeight}% ${mainHeight}% ${textboxHeight}% ${spacerHeight}%`');
+  grid-template-rows: v-bind('`${headerHeight}% ${subtitleHeight}% ${mainHeight}% ${textboxHeight}% ${spacerHeight}%`');
 }
 </style>
