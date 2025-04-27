@@ -18,15 +18,15 @@ const props = defineProps({
   },
   mainHeight: {
     type: [String, Number],
-    default: 65,
+    default: 55,
   },
   footerHeight: {
     type: [String, Number],
-    default: 20,
+    default: 15,
   },
   spacerHeight: {
     type: [String, Number],
-    default: 0,
+    default: 10,
   },
 })
 </script>
