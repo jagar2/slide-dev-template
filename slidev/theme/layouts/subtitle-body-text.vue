@@ -11,7 +11,7 @@ const props = defineProps({
   mainHeight: { type: [String, Number], default: 55 },
   textboxHeight: { type: [String, Number], default: 15 },
   spacerHeight: { type: [String, Number], default: 10 },
-  reference: { type: String, default: '' },
+  reference: { type: String, default: ' d' },
 })
 </script>
 
