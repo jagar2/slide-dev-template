@@ -15,74 +15,86 @@ const props = defineProps({
   textboxHeight: { type: [String, Number], default: 15 },
   spacerHeight: { type: [String, Number], default: 10 },
   reference: { type: String, default: '' },
+  columns: { type: Number, default: 2 },
 })
 
 // Compute dynamic grid layout
 const gridTemplateRows = computed(() => {
   const header = props.headerHeight
-  const hasSubheadings = props.leftHeading.trim() !== '' || props.rightHeading.trim() !== ''
-  const headingRow = hasSubheadings ? props.headingRowHeight : 0
-  const main = props.mainHeight + (hasSubheadings ? 0 : props.headingRowHeight)
+  const hasHeadings = props.leftHeading.trim() !== '' || props.rightHeading.trim() !== ''
+  const headingRow = hasHeadings ? props.headingRowHeight : 0
+  const main = props.mainHeight + (hasHeadings ? 0 : props.headingRowHeight)
   const textbox = props.textboxHeight
   const spacer = props.spacerHeight
 
   return `${header}% ${headingRow}% ${main}% ${textbox}% ${spacer}%`
 })
 
-// Two column layout in heading and main
-const twoColumnGrid = computed(() => `repeat(2, minmax(0, 1fr))`)
+// Two-column layout
+const twoColumnGrid = computed(() => `repeat(2, 1fr)`)
 </script>
 
 <template>
   <div class="slidev-layout custom-layout" :style="{ gridTemplateRows }">
-    
+
     <!-- Title -->
     <div class="flex flex-col justify-center gap-2">
       <h1 class="text-5xl font-bold text-[#24527a] leading-tight m-0 text-left">{{ titleText }}</h1>
     </div>
 
-    <!-- Heading Row -->
+    <!-- Heading Row (optional) -->
     <div class="main-grid" :style="{ gridTemplateColumns: twoColumnGrid }">
-      <!-- Left Subheading -->
-      <div class="flex flex-col justify-center items-center">
+      <div class="flex items-center justify-center">
         <h2 v-if="leftHeading" class="text-2xl font-semibold text-[#2B90B6] leading-snug m-0 text-center">
           {{ leftHeading }}
         </h2>
       </div>
-
-      <!-- Right Subheading -->
-      <div class="flex flex-col justify-center items-center">
+      <div class="flex items-center justify-center">
         <h2 v-if="rightHeading" class="text-2xl font-semibold text-[#2B90B6] leading-snug m-0 text-center">
           {{ rightHeading }}
         </h2>
       </div>
     </div>
 
-    <!-- Main Images or Slots -->
+    <!-- Main Two-Column Section -->
     <div class="main-grid" :style="{ gridTemplateColumns: twoColumnGrid }">
-      <!-- Left Content -->
-      <div class="flex flex-col justify-start items-center p-2 gap-2">
-        <div v-if="leftImage" class="w-full flex justify-center">
-          <img :src="leftImage" class="max-w-full max-h-64 object-contain rounded-2xl" />
+      
+      <!-- Left Column -->
+      <div class="flex flex-col justify-start items-center w-full h-full p-4 gap-4 overflow-hidden">
+        <div v-if="leftImage" class="flex-grow flex justify-center items-center w-full h-full overflow-hidden">
+          <img
+            :src="leftImage"
+            class="max-w-full max-h-full object-contain rounded-xl"
+            style="height: 100%; max-height: 100%;"
+          />
         </div>
-        <slot name="left" />
+        <div class="flex-shrink-0 w-full">
+          <slot name="left" />
+        </div>
       </div>
 
-      <!-- Right Content -->
-      <div class="flex flex-col justify-start items-center p-2 gap-2">
-        <div v-if="rightImage" class="w-full flex justify-center">
-          <img :src="rightImage" class="max-w-full max-h-64 object-contain rounded-2xl" />
+      <!-- Right Column -->
+      <div class="flex flex-col justify-start items-center w-full h-full p-4 gap-4 overflow-hidden">
+        <div v-if="rightImage" class="flex-grow flex justify-center items-center w-full h-full overflow-hidden">
+          <img
+            :src="rightImage"
+            class="max-w-full max-h-full object-contain rounded-xl"
+            style="height: 100%; max-height: 100%;"  
+          />
         </div>
-        <slot name="right" />
+        <div class="flex-shrink-0 w-full">
+          <slot name="right" />
+        </div>
       </div>
+
     </div>
 
-    <!-- Text Underneath -->
+    <!-- Text Section -->
     <div class="text-left text-base leading-tight">
       <slot name="text" />
     </div>
 
-    <!-- Footer / Spacer -->
+    <!-- Footer -->
     <div class="flex items-center justify-center w-full">
       <Layouttextbox :reference="reference" />
     </div>
@@ -105,7 +117,6 @@ const twoColumnGrid = computed(() => `repeat(2, minmax(0, 1fr))`)
   background-size: cover;
 }
 
-/* Main two-column grid for headings and main */
 .main-grid {
   display: grid;
   width: 100%;
