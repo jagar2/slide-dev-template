@@ -30,6 +30,10 @@ const props = defineProps({
     type: [String, Number],
     default: 10,
   },
+  reference: {
+    type: String,
+    default: 'Default Reference',
+  },
 })
 </script>
 
@@ -55,7 +59,9 @@ const props = defineProps({
     </div>
 
     <!-- Spacer Area -->
-    <div class="spacer"></div>
+    <div class="spacer">
+        <LayoutFooter :reference="reference" />
+    </div>
   </div>
 </template>
 
