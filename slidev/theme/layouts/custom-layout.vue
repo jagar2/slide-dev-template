@@ -8,7 +8,7 @@ const props = defineProps({
   },
   subtitleText: {
     type: String,
-    default: 'Default Subtitle',
+    default: '',
   },
   image: {
     type: String,
@@ -40,9 +40,9 @@ const props = defineProps({
 <template>
   <div class="slidev-layout custom-layout">
     <!-- Header -->
-    <div class="flex flex-col justify-center items-start gap-2">
-      <h1 class="text-5xl font-bold text-[#24527a] leading-tight m-0">{{ titleText }}</h1>
-      <h2 class="text-2xl font-semibold text-[#2B90B6] leading-snug m-0">{{ subtitleText }}</h2>
+    <div class="flex flex-col justify-center gap-2">
+      <h1 class="text-5xl font-bold text-[#24527a] leading-tight m-0 text-left">{{ titleText }}</h1>
+      <h2 v-if="subtitleText" class="text-2xl font-semibold text-[#2B90B6] leading-snug m-0 text-center">{{ subtitleText }}</h2>
     </div>
 
     <!-- Main Image Area -->
