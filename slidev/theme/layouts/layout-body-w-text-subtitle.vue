@@ -89,22 +89,30 @@ const props = defineProps({
   display: grid;
   grid-template-rows: v-bind('`${titleHeight}% ${mainHeight}% ${footerHeight}%`');
   padding-top: v-bind('`${titleHeight}%`');
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* Subtitle Section */
 .subtitle-section {
   grid-row: 1;
-  @apply px-10 py-2;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  border: 1px solid black;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .subtitle-text {
   @apply text-2xl font-semibold;
   color: #2B90B6;
-  border: none; /* Remove any border to prevent a light gray box */
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* Main Content Section */
@@ -115,9 +123,10 @@ const props = defineProps({
   justify-content: center;
   margin: 0;
   padding: 0;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
+  border: 1px solid black;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* Image Wrapper */
@@ -129,9 +138,7 @@ const props = defineProps({
   justify-content: center;
   margin: 0;
   padding: 0;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
+  border: 1px solid black;
   pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
@@ -146,9 +153,10 @@ const props = defineProps({
   justify-content: center;
   margin: 0;
   padding: 0;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
+  border: 1px solid black;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* Proportional Image */
@@ -175,15 +183,24 @@ const props = defineProps({
   align-items: flex-start;
   justify-content: flex-start;
   padding: 0;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* List styling in footer */
 .footer-content ul {
   margin: 0;
   padding: 0;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .footer-content li {
   line-height: 1.2;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 </style>
