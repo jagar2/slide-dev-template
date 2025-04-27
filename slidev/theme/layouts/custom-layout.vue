@@ -38,31 +38,35 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="slidev-layout custom-layout">
-    <!-- Title and Subtitle Area -->
-    <div class="header">
-      <h1 class="title">{{ titleText }}</h1>
-      <h2 class="subtitle">{{ subtitleText }}</h2>
-    </div>
-
-    <!-- Main Content Area -->
-    <div class="main-content">
-        <div class="w-1/2 flex justify-center items-center p-8 max-h-md object-cover" :class="imageOrder">
-            <img v-if="image" :src="image"  class="rounded-2xl border-image h-full object-cover" />
+    <div class="slidev-layout custom-layout">
+      <!-- Title and Subtitle Area -->
+      <div class="header">
+        <h1 class="title">{{ titleText }}</h1>
+        <h2 class="subtitle">{{ subtitleText }}</h2>
+      </div>
+  
+      <!-- Main Content Area -->
+      <div class="main-body">
+        <div class="w-full flex justify-center items-center p-8" style="height: 100%;">
+          <div class="relative w-full h-full max-w-2xl max-h-96">
+            <img v-if="image"
+                 :src="image"
+                 class="absolute inset-0 m-auto max-w-full max-h-full rounded-2xl object-contain" />
             <slot v-else />
+          </div>
         </div>
-    </div>
-
-    <!-- textbox Text Area -->
-    <div class="textbox-content">
-      <slot name="text" />
-    </div>
-
-    <!-- Spacer Area -->
-    <div class="spacer">
+      </div>
+  
+      <!-- Textbox Content Area -->
+      <div class="textbox-content">
+        <slot name="text" />
+      </div>
+  
+      <!-- Spacer Area -->
+      <div class="spacer">
         <Layouttextbox :reference="reference" />
+      </div>
     </div>
-  </div>
 </template>
 
 <style lang="postcss">
@@ -72,10 +76,14 @@ const props = defineProps({
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
   /* Create 4 rows: Header, Main, textbox, Spacer */
   grid-template-rows: v-bind('`${headerHeight}% ${mainHeight}% ${textboxHeight}% ${spacerHeight}%`');
 }
+
+.main-body {
+    @apply flex justify-center items-center w-full h-full overflow-hidden;
+    border: none;
+  }
 
 /* Header: Title + Subtitle */
 .header {
@@ -110,6 +118,7 @@ const props = defineProps({
 .main-content {
   @apply flex justify-center items-center;
   overflow: hidden;
+  border: none;
 }
 
 /* textbox Content */
@@ -132,4 +141,11 @@ const props = defineProps({
 .spacer {
   /* This section is a flexible spacer */
 }
+
+.main-content {
+    @apply flex justify-center items-center;
+    overflow: hidden;
+    border: none;
+  }
+
 </style>
