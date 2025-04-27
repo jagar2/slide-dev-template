@@ -75,6 +75,17 @@ title-text: "What is Slidedsfsdfsdfdsfdsfv?"
 </p>
 
 ---
+layout: custom-layout
+titleText: "My Title"
+subtitleText: "My Subtitle"
+image: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5fe-4200-9ea7-34315b1764da.jpg"
+---
+
+::text::
+Your footer text here, line-by-line.
+
+
+---
 layout: layout-body-w-text-subtitle
 titleText: "My Title"
 subtitleText: "Here is some text"
