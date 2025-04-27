@@ -1,5 +1,5 @@
 <script setup>
-import LayoutFooter from "../components/citation.vue";
+import Layouttextbox from "../components/citation.vue";
 
 const props = defineProps({
   titleText: {
@@ -22,7 +22,7 @@ const props = defineProps({
     type: [String, Number],
     default: 55,
   },
-  footerHeight: {
+  textboxHeight: {
     type: [String, Number],
     default: 15,
   },
@@ -53,14 +53,14 @@ const props = defineProps({
         </div>
     </div>
 
-    <!-- Footer Text Area -->
-    <div class="footer-content">
+    <!-- textbox Text Area -->
+    <div class="textbox-content">
       <slot name="text" />
     </div>
 
     <!-- Spacer Area -->
     <div class="spacer">
-        <LayoutFooter :reference="reference" />
+        <Layouttextbox :reference="reference" />
     </div>
   </div>
 </template>
@@ -73,8 +73,8 @@ const props = defineProps({
   background-position: center;
   background-size: cover;
 
-  /* Create 4 rows: Header, Main, Footer, Spacer */
-  grid-template-rows: v-bind('`${headerHeight}% ${mainHeight}% ${footerHeight}% ${spacerHeight}%`');
+  /* Create 4 rows: Header, Main, textbox, Spacer */
+  grid-template-rows: v-bind('`${headerHeight}% ${mainHeight}% ${textboxHeight}% ${spacerHeight}%`');
 }
 
 /* Header: Title + Subtitle */
@@ -112,8 +112,8 @@ const props = defineProps({
   overflow: hidden;
 }
 
-/* Footer Content */
-.footer-content {
+/* textbox Content */
+.textbox-content {
   text-align: left;
   font-size: 1rem;
   line-height: 1.2;
@@ -122,7 +122,7 @@ const props = defineProps({
   display: block;
 }
 
-.footer-content p, .footer-content li {
+.textbox-content p, .textbox-content li {
   margin: 0;
   padding: 0;
   line-height: 1.2;
