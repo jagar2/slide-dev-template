@@ -89,7 +89,6 @@ image: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5
 ---
 layout: custom-layout
 titleText: "No Subtitle"
-subtitleText: none
 image: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5fe-4200-9ea7-34315b1764da.jpg"
 ---
 
