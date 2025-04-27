@@ -12,6 +12,22 @@ const props = defineProps({
     type: String,
     required: false,
   },
+  headerHeight: {
+    type: [String, Number],
+    default: 15,
+  },
+  mainHeight: {
+    type: [String, Number],
+    default: 65,
+  },
+  footerHeight: {
+    type: [String, Number],
+    default: 20,
+  },
+  spacerHeight: {
+    type: [String, Number],
+    default: 0,
+  },
 })
 </script>
 
@@ -35,6 +51,9 @@ const props = defineProps({
     <div class="footer-content">
       <slot name="text" />
     </div>
+
+    <!-- Spacer Area -->
+    <div class="spacer"></div>
   </div>
 </template>
 
@@ -46,8 +65,8 @@ const props = defineProps({
   background-position: center;
   background-size: cover;
 
-  /* Create 3 rows: Header (15%), Main (65%), Footer (20%) */
-  grid-template-rows: 15% 65% 20%;
+  /* Create 4 rows: Header, Main, Footer, Spacer */
+  grid-template-rows: v-bind('`${headerHeight}% ${mainHeight}% ${footerHeight}% ${spacerHeight}%`');
 }
 
 /* Header: Title + Subtitle */
@@ -99,5 +118,10 @@ const props = defineProps({
   margin: 0;
   padding: 0;
   line-height: 1.2;
+}
+
+/* Spacer */
+.spacer {
+  /* This section is a flexible spacer */
 }
 </style>
