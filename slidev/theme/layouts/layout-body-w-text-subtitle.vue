@@ -32,7 +32,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="slidev-layout mainer">
+  <div class="slidev-layout mainer" @click.stop>
     <!-- Title Section (Absolutely Positioned) -->
     <div
       style="
@@ -63,15 +63,17 @@ const props = defineProps({
     </div>
 
     <!-- Main Content Section -->
-    <div class="main-content">
-      <div class="image-container">
-        <img v-if="image" :src="image" class="proportional-image"/>
-        <slot v-else></slot>
+    <div class="main-content" @click.stop>
+      <div class="image-wrapper" @click.stop>
+        <div class="image-container" @click.stop>
+          <img v-if="image" :src="image" class="proportional-image"/>
+          <slot v-else></slot>
+        </div>
       </div>
     </div>
 
     <!-- Footer Content Section -->
-    <div class="footer-content">
+    <div class="footer-content" @click.stop>
       <slot name="text" />
     </div>
   </div>
@@ -111,18 +113,28 @@ const props = defineProps({
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 3px;
-  padding: 0px;
-  border: none; /* Remove any border to prevent a light gray box */
+  margin: 0;
+  padding: 0;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-.image-container img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 8px; /* Add rounded border to the image */
-  border: none; /* Remove any border to prevent a light gray box */
-  margin: 1px;
+/* Image Wrapper */
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* Image Container */
@@ -132,8 +144,11 @@ const props = defineProps({
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none; /* Remove any border to prevent a light gray box */
-  margin: 10px;
+  margin: 0;
+  padding: 0;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* Proportional Image */
@@ -141,8 +156,14 @@ const props = defineProps({
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  border: none; /* Remove any border to prevent a light gray box */
-  margin: 3px;
+  margin: 0;
+  padding: 0;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* Footer Content Section */

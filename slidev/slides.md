@@ -77,7 +77,7 @@ title-text: "What is Slidedsfsdfsdfdsfdsfv?"
 ---
 layout: layout-body-w-text-subtitle
 titleText: "My Title"
-subtitleText: "My Subtitle"
+subtitleText: "Here is some text"
 image: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5fe-4200-9ea7-34315b1764da.jpg"
 ---
 

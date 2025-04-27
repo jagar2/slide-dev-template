@@ -4,11 +4,43 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  .image-container:hover,
+  .image-container:focus,
+  .image-container:active {
+    border: none;
+    outline: none;
+    box-shadow: none;
   }
   
   .proportional-image {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+    outline: none;
+    box-shadow: none;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  .proportional-image:hover,
+  .proportional-image:focus,
+  .proportional-image:active {
+    border: none;
+    outline: none;
+    box-shadow: none;
   }
   
