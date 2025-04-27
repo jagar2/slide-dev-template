@@ -82,7 +82,9 @@ image: "https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5
 ---
 
 ::text::
-Your footer text here, line-by-line.
+- line 1
+- line 2
+- line 3
 
 
 ---
