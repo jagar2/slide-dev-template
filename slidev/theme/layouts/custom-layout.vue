@@ -39,90 +39,47 @@ const props = defineProps({
 
 <template>
   <div class="slidev-layout custom-layout">
-    <!-- Title and Subtitle Area -->
-    <div class="header">
-      <h1 class="title">{{ titleText }}</h1>
-      <h2 class="subtitle">{{ subtitleText }}</h2>
+    <!-- Header -->
+    <div class="flex flex-col justify-center items-start gap-2">
+      <h1 class="text-5xl font-bold text-[#24527a] leading-tight m-0">{{ titleText }}</h1>
+      <h2 class="text-2xl font-semibold text-[#2B90B6] leading-snug m-0">{{ subtitleText }}</h2>
     </div>
 
-    <!-- Main Content Area -->
-    <div class="main-content">
+    <!-- Main Image Area -->
+    <div class="flex justify-center items-center w-full h-full overflow-hidden">
       <div class="relative w-full h-full flex justify-center items-center">
         <img v-if="image"
              :src="image"
-             class="max-w-full max-h-full rounded-2xl object-contain block" />
+             class="max-w-full max-h-full object-contain rounded-2xl block" />
         <slot v-else />
       </div>
     </div>
 
-    <!-- Textbox Content Area -->
-    <div class="textbox-content">
+    <!-- Text Content -->
+    <div class="text-left text-base leading-tight">
       <slot name="text" />
     </div>
 
-    <!-- Spacer Area -->
-    <div class="spacer">
+    <!-- Footer/Spacer -->
+    <div class="flex items-center justify-center w-full">
       <Layouttextbox :reference="reference" />
     </div>
   </div>
 </template>
 
 <style lang="postcss">
-/* Layout Grid */
+/* Kill Slidev injected borders and paddings */
+:global(.slidev-layout) {
+  @apply border-0 p-0 m-0 shadow-none !important;
+}
+
+/* Main layout grid */
 .slidev-layout.custom-layout {
-  @apply h-full w-full grid gap-4 px-10 py-6;
+  @apply h-full w-full grid px-10 py-6 gap-4;
   background-image: url("../assets/full-branding.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   grid-template-rows: v-bind('`${headerHeight}% ${mainHeight}% ${textboxHeight}% ${spacerHeight}%`');
-}
-
-/* Header: Title + Subtitle */
-.header {
-  @apply flex flex-col justify-center items-start gap-1;
-}
-
-.title {
-  font-size: 2.8rem;
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-  line-height: 1.1;
-  color: #24527a;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2;
-  color: #2B90B6;
-}
-
-/* Main Content (Image Area) */
-.main-content {
-  @apply flex justify-center items-center w-full h-full overflow-hidden;
-  border-width: 0; /* force no borders */
-}
-
-/* Textbox Content */
-.textbox-content {
-  @apply text-left text-base leading-tight;
-  margin: 0;
-  padding: 0;
-}
-
-.textbox-content p,
-.textbox-content li {
-  margin: 0;
-  padding: 0;
-  line-height: 1.2;
-}
-
-/* Spacer (footer) */
-.spacer {
-  /* No explicit styles; controlled by layout */
 }
 </style>
