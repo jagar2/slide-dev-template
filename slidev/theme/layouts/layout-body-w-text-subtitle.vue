@@ -27,18 +27,6 @@ const props = defineProps({
   footerHeight: {
     type: [String, Number],
     default: 25
-  },
-  showTitle: {
-    type: Boolean,
-    default: true
-  },
-  showSubtitle: {
-    type: Boolean,
-    default: true
-  },
-  titleFontSize: {
-    type: [String, Number],
-    default: 28
   }
 })
 </script>
@@ -46,32 +34,29 @@ const props = defineProps({
 <template>
   <div class="slidev-layout mainer">
     <!-- Title Section (Absolutely Positioned) -->
-    <div v-if="showTitle"
+    <div
       style="
         position: absolute;
         z-index: 100;
         left: 2.5%;
-        top: 2.5%;
+        top: 1%;
         width: 95%;
-        height: 30pt;
+        height: 10%;
         transform-origin: left left;
+        /* border: 1px solid black; */
         display: flex;
-        /* align-items: center; */
+        align-items: center;
         justify-content: left;
-        /* text-align: center; */
-        border: 1px solid black;
-        overflow: visible;
-        margin: 0;
-        padding: 0;
+        text-align: center;
       "
     >
-      <div class="title-large" :style="{ fontSize: `${titleFontSize}pt`, margin: 0, padding: 0 }">
+      <div class="title-large">
         {{ titleText }}
       </div>
     </div>
 
     <!-- Subtitle Section -->
-    <div v-if="showSubtitle" class="subtitle-section">
+    <div class="subtitle-section">
       <div class="subtitle-text">
         {{ subtitleText }}
       </div>
@@ -100,23 +85,22 @@ const props = defineProps({
   background-position: center;
   background-size: cover;
   display: grid;
-  grid-template-rows: v-bind('`${showSubtitle ? titleHeight : 0}% ${mainHeight}% ${footerHeight}%`');
-  padding-top: v-bind('`${showSubtitle ? titleHeight : 0}%`');
+  grid-template-rows: v-bind('`${titleHeight}% ${mainHeight}% ${footerHeight}%`');
+  padding-top: v-bind('`${titleHeight}%`');
 }
 
 /* Subtitle Section */
 .subtitle-section {
   grid-row: 1;
+  @apply px-10 py-2;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 0pt
 }
 
 .subtitle-text {
-  font-weight: semibold;
-  font-size: 20pt;
+  @apply text-2xl font-semibold;
   color: #2B90B6;
   border: none; /* Remove any border to prevent a light gray box */
 }
