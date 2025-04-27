@@ -1,39 +1,16 @@
 <script setup>
-import Layouttextbox from "../components/citation.vue";
+import Layouttextbox from "../components/citation.vue"
+import SlideNumber from "../components/SlideNumber.vue"
 
 const props = defineProps({
-  titleText: {
-    type: String,
-    default: 'Default Title',
-  },
-  subtitleText: {
-    type: String,
-    default: '',
-  },
-  image: {
-    type: String,
-    required: false,
-  },
-  headerHeight: {
-    type: [String, Number],
-    default: 15,
-  },
-  mainHeight: {
-    type: [String, Number],
-    default: 55,
-  },
-  textboxHeight: {
-    type: [String, Number],
-    default: 15,
-  },
-  spacerHeight: {
-    type: [String, Number],
-    default: 10,
-  },
-  reference: {
-    type: String,
-    default: 'Default Reference',
-  },
+  titleText: { type: String, default: 'Default Title' },
+  subtitleText: { type: String, default: '' },
+  image: { type: String, required: false },
+  headerHeight: { type: [String, Number], default: 15 },
+  mainHeight: { type: [String, Number], default: 55 },
+  textboxHeight: { type: [String, Number], default: 15 },
+  spacerHeight: { type: [String, Number], default: 10 },
+  reference: { type: String, default: 'Default Reference' },
 })
 </script>
 
@@ -65,6 +42,9 @@ const props = defineProps({
       <Layouttextbox :reference="reference" />
     </div>
   </div>
+
+  <!-- Slide Number Component -->
+  <SlideNumber />
 </template>
 
 <style lang="postcss">
