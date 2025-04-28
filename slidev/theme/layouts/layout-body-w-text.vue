@@ -48,7 +48,7 @@ const props = defineProps({
 <style lang="postcss">
 .slidev-layout.mainer {
   @apply h-full w-full relative;
-  background-image: url("../assets/full-branding.png");
+  background-image: url("../assets/Drexel-background.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

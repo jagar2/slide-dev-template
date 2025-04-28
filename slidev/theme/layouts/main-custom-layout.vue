@@ -76,7 +76,7 @@ const gridTemplateRows = computed(() => {
 
 .slidev-layout.custom-layout {
   @apply h-full w-full grid px-10 py-6 gap-4;
-  background-image: url("../assets/full-branding.png");
+  background-image: url("../assets/Drexel-background.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
