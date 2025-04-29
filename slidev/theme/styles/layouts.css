@@ -17,7 +17,7 @@
   }
 
   li {
-    line-height: 0.5; /* Now it will work */
+    line-height: 1.5rem; /* Now it will work */
   }
 
   /* h1 + p {
