@@ -22,7 +22,7 @@ const totalPages = computed(() => nav.total)
 </script>
 
 <template>
-  <div class="fixed bottom-4 right-6 text-sm text-gray-600 opacity-70 select-none pointer-events-none">
+  <div class="fixed bottom-4 right-6 text-2xl text-gray-600 opacity-70 select-none pointer-events-none">
     {{ currentPage }} / {{ totalPages }}
   </div>
 </template>

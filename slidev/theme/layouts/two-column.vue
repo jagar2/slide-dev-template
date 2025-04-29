@@ -104,7 +104,7 @@ const twoColumnGrid = computed(() => `repeat(2, 1fr)`)
   <!-- Move SlideNumber here, bottom left -->
   <div class="custom-slide-number">
       <SlideNumber />
-    </div>
+</div>
 
 </template>
 
@@ -128,11 +128,7 @@ const twoColumnGrid = computed(() => `repeat(2, 1fr)`)
   gap: 1rem;
 }
 
-.custom-slide-number {
-    transform: translateX(-6%);
-    z-index: 50;
-    text-align: center;
-  }
+
   
   
 </style>

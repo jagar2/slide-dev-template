@@ -65,7 +65,9 @@ const gridTemplateRows = computed(() => {
       </div>
     </div>
   
-    <SlideNumber />
+    <div class="custom-slide-number">
+      <SlideNumber />
+    </div>
   </template>
   
 
