@@ -39,7 +39,7 @@ const twoColumnGrid = computed(() => `repeat(2, 1fr)`)
 
     <!-- Title -->
     <div class="flex flex-col justify-center gap-2">
-      <h1 class="text-5xl font-bold text-[#24527a] leading-tight m-0 text-left">{{ titleText }}</h1>
+      <h1 class="title-large">{{ titleText }}</h1>
     </div>
 
     <!-- Heading Row (optional) -->
