@@ -17,7 +17,7 @@
   }
 
   li {
-    line-height: 1; /* Now it will work */
+    line-height: 0.5; /* Now it will work */
   }
 
   /* h1 + p {
@@ -45,7 +45,7 @@
   margin: 0;
   padding: 0;
   background-color: #07294D;
-  background-image: linear-gradient(45deg, #07294D 10%, #006699 20%);
+  background-image: linear-gradient(45deg, #006699 0%,  #07294D 2%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
