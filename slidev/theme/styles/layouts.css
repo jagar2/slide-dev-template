@@ -4,20 +4,30 @@
   }
   
   h2 {
-    font-family: var(--slidev-font-h2) uppercase;
+    font-family: var(--slidev-font-h2);
   }
 
   h3 {
     font-family: var(--slidev-font-h3);
   }
+
+  h4 {
+    font-family: var(--slidev-font-h4);
+  }
+
+  h5 {
+    font-family: var(--slidev-font-h5);
+  }
   
   ul {
     list-style: disc;
     font-size: 1.5rem;
+    font-family: var(--slidev-font-h3);
   }
 
   li {
     line-height: 1.5rem; /* Now it will work */
+    font-family: var(--slidev-font-h3);
   }
 
   /* h1 + p {

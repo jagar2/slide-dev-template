@@ -36,6 +36,20 @@
     font-style: normal;
 }
 
+@font-face{
+    font-family: 'Inter';
+    src: url('../fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "inter-italic";
+    src: url('../fonts/inter-italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @font-face {
     font-family: 'Papernotes Sketch';
     src: url('../fonts/Papernotes.woff2') format('woff2');
@@ -65,7 +79,10 @@
 }
 
 :root {
---slidev-font-h1: 'Coolvetica';
+--slidev-font-h1: 'Random Wednesday';
 --slidev-font-h2: 'Papernotes';
---slidev-font-h3: 'Papernotes';
+--slidev-font-h3: 'Coolvetica';
+--slidev-font-h4: 'Hello Bird';
+--slidev-font-h5: 'inter-italic';
+--slidev-font-body: 'Inter';
 }

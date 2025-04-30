@@ -55,12 +55,12 @@ layout: mainer
 title-text: "What is Slidedsfsdfsdfdsfdsfv?"
 ---
 
-## Test Azo Sans Font
-## Test Malonet Font
-### Test Papernotes Font dfssdf
-#### Test Anthonio Font
-##### Test Papernotes Sketch Font
-###### Test Random Wednesday Font
+# Level 1
+## Level 2
+### Level 3
+#### Level 4
+##### Level 5
+###### Level 6
 
 - 📝 **Text-based** - focus on the content with Markdown, and then style them later
 - 🎨 **Themable** - themes can be shared and re-used as npm packages
