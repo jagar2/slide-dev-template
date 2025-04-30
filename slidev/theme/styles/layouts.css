@@ -30,6 +30,10 @@
     font-family: var(--slidev-font-h3);
   }
 
+  p {
+    font-family: var(--slidev-font-body);
+  }
+
   /* h1 + p {
     @apply -mt-4 opacity-50 mb-4 font-serif;
   }
