@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="slidev-layout mainer">
+  <div class="slidev-layout custom-layout">
     <div
       style="
         position: absolute;
@@ -40,11 +40,16 @@ const props = defineProps({
       <slot />
     </div>
   </div>
+
+  <div class="custom-slide-number">
+      <SlideNumber />
+  </div>
+
 </template>
 
 <style lang="postcss">
 .slidev-layout.mainer {
-  background-image: url("../assets/full-branding.png");
+  background-image: url("../assets/Drexel-background.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

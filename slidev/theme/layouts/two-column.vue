@@ -113,14 +113,6 @@ const twoColumnGrid = computed(() => `repeat(2, 1fr)`)
   @apply border-0 p-0 m-0 shadow-none !important;
 }
 
-.slidev-layout.custom-layout {
-  @apply h-full w-full grid px-10 py-6 gap-4;
-  background-image: url("../assets/Drexel-background.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
 .main-grid {
   display: grid;
   width: 100%;

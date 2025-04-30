@@ -51,8 +51,8 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
-layout: mainer
-title-text: "What is Slidedsfsdfsdfdsfdsfv?"
+layout: main
+title-text: "Main Slide Layout"
 ---
 
 # Level 1
