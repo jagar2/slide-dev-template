@@ -3,8 +3,6 @@
 theme: ./theme
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: ./assets/title_image.png
-# some information about your slides (markdown enabled)
 title: Add Title Here
 info: |
   ## Slidev Starter Template
@@ -26,22 +24,22 @@ mdc: true
 #  ogImage: https://cover.sli.dev
 ---
 
-# Add Title Here
+# <span style="color:#C5C5C5; -webkit-text-stroke: 1px black; text-shadow: 0 0 40px white;">Here is your title</span>
 
-## Joshua C. Agar
+## <span style="color:#C5C5C5; -webkit-text-stroke: 1px black; text-shadow: 0 0 20px white;">Joshua C. Agar</span>
 
-### Drexel University
+## <span style="color:#C5C5C5; -webkit-text-stroke: 1px black; text-shadow: 0 0 20px white;">Drexel University</span>
 
-#### Department of Mechanical Engineering and Mechanics
+## <span style="color:#C5C5C5; -webkit-text-stroke: 1px black; text-shadow: 0 0 20px white;">Department of Mechanical Engineering and Mechanics</span>
 
-#### {{ new Date().toLocaleDateString() }}
+## <span style="color:#C5C5C5; -webkit-text-stroke: 1px black; text-shadow: 0 0 20px white;">{{ new Date().toLocaleDateString() }}</span>
 
 <!-- <div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
   Press Space for next page <carbon:arrow-right />
 </div> -->
 
 <div class="abs-br m-6 text-xl">
-  <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
+  <a href="https://github.com/m3-learning" target="_blank" class="slidev-icon-btn">
     <carbon:logo-github />
   </a>
 </div>

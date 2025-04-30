@@ -8,19 +8,20 @@
 
 <style lang="postcss">
 .slidev-layout.cover {
-  background-image: url("../assets/page-1.svg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+    url("../assets/coverimage.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
   @apply font-serif grid;
+}
 
-  h1 {
-    @apply text-6xl leading-20;
-  }
+.slidev-layout.cover h1 {
+  @apply text-6xl leading-tight font-bold text-center text-black;
+}
 
-  h1 + p {
-    @apply text-2xl -mt-6;
-  }
+.slidev-layout.cover h1 + p {
+  @apply text-2xl -mt-6 text-center text-black;
 }
 </style>
