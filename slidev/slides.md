@@ -55,20 +55,21 @@ layout: main
 title-text: "Main Slide Layout"
 ---
 
-# Level 1
-## Level 2
-### Level 3
-#### Level 4
-##### Level 5
-###### Level 6
+# <span v-click="1">Level 1</span>
+## <span v-click="2">Level 2</span>
+### <span v-click="3">Level 3</span>
+#### <span v-click="4">Level 4</span>
+##### <span v-click="5">Level 5</span>
+###### <span v-click="6">Level 6</span>
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - themes can be shared and re-used as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
+<ul>
+  <li v-click="3" v-motion="fade">🧑‍💻 - <strong>Developer Friendly</strong> - code highlighting, live coding with autocompletion</li>
+  <li v-click="4" v-motion="fade">🤹 - <strong>Interactive</strong> - embed Vue components to enhance your expressions</li>
+  <li v-click="5" v-motion="fade">🎥 - <strong>Recording</strong> - built-in recording and camera view</li>
+  <li v-click="6" v-motion="fade">📤 - <strong>Portable</strong> - export to PDF, PPTX, PNGs, or even a hostable SPA</li>
+  <li v-click="7" v-motion="fade">🛠 <strong>Hackable</strong> - virtually anything that's possible on a webpage is possible in Slidev</li>
+</ul>
+
 
 <p style="text-align: center;">
   Read more about [Why Slidev?](https://sli.dev/guide/why)
