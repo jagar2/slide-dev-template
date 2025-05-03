@@ -54,12 +54,16 @@ const gridTemplateRows = computed(() => {
 
     <!-- Footer/Spacer -->
     <div class="flex items-center justify-center w-full">
-      <Layouttextbox :reference="reference" />
     </div>
   </div>
 
   <div class="custom-slide-number">
     <SlideNumber />
+  </div>
+
+    <!-- Footer/Spacer -->
+  <div class="absolute bottom-[10px] left-1/2 -translate-x-1/2">
+    <span>{{ reference }}</span>
   </div>
 </template>
 
