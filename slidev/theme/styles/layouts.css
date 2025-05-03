@@ -2,6 +2,7 @@
   h1 {
     font-family: var(--slidev-font-h1);
     color: #07294D;
+
   }
   
   h2 {
@@ -67,10 +68,11 @@
   font-family: var(--slidev-font-h1);
   margin: 0;
   padding: 0.2em 0;
-  font-size: 3rem !important;
+  font-size: 2rem !important;
   background-color: #07294D;
   background-image: linear-gradient(45deg, #006699 0%,  #07294D 2%);
   background-size: 100%;
+  letter-spacing: -0.05em;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
