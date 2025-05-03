@@ -6,7 +6,7 @@ import SlideNumber from "../components/SlideNumber.vue"
 const props = defineProps({
   titleText: { type: String, default: 'Default Title' },
   subtitleText: { type: String, default: '' },
-  image: { type: String, required: false },
+  images: { type: Array, default: () => [] },
   headerHeight: { type: [String, Number], default: 7.5 },
   subtitleHeight: { type: [String, Number], default: 7.5 },
   mainHeight: { type: [String, Number], default: 55 },
@@ -46,10 +46,14 @@ const gridTemplateRows = computed(() => {
   
       <!-- Main Image Area -->
       <div class="flex justify-center items-center w-full h-full overflow-hidden">
-        <div class="relative w-full h-full flex justify-center items-center">
-          <img v-if="image"
-               :src="image"
-               class="max-w-full max-h-full object-contain rounded-2xl block" />
+        <div class="relative w-full h-full flex justify-center items-center gap-4">
+          <template v-if="images.length">
+            <img v-for="(img, i) in images"
+                :key="i"
+                :src="img.src"
+                :class="['max-w-full max-h-full object-contain rounded-2xl block', img.class]"
+                :style="img.style" />
+          </template>
           <slot v-else />
         </div>
       </div>
