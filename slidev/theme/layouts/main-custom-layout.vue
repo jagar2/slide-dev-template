@@ -48,11 +48,13 @@ const gridTemplateRows = computed(() => {
       <div class="flex justify-center items-center w-full h-full overflow-hidden">
         <div class="relative w-full h-full flex justify-center items-center gap-4">
           <template v-if="images.length">
-            <img v-for="(img, i) in images"
-                :key="i"
-                :src="img.src"
-                :class="['max-w-full max-h-full object-contain rounded-2xl block', img.class]"
-                :style="img.style" />
+            <v-click v-for="(img, i) in images" :key="i">
+            <img
+              :src="img.src"
+              class="absolute inset-0 m-auto max-w-full max-h-full object-contain rounded-2xl"
+              :style="img.style"
+            />
+          </v-click>
           </template>
           <slot v-else />
         </div>
