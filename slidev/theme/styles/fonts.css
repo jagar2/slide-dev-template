@@ -78,8 +78,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "SyneMono-Regular";
+    src: url('../fonts/SyneMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
---slidev-font-h1: 'Random Wednesday';
+--slidev-font-h1: 'SyneMono-Regular';
 --slidev-font-h2: 'Papernotes';
 --slidev-font-h3: 'Inter';
 --slidev-font-h4: 'interitalic';

@@ -63,7 +63,7 @@
 
 .title-large {
   @apply text-left font-bold text-primary text-5xl;
-  font-family: var(--slidev-font-h1, sans-serif);
+  font-family: var(--slidev-font-h1);
   margin: 0;
   padding: 0.2em 0;
   font-size: 3rem !important;

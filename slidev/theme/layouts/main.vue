@@ -18,7 +18,6 @@ const props = defineProps({
         width: 95%;
         height: 10%;
         transform-origin: left left;
-        border: 1px solid black;
       "
     >
       <div class="title-large">
@@ -33,7 +32,6 @@ const props = defineProps({
         left: 2.5%;
         width: 95%;
         height: 75%;
-        border: 1px solid black;
         text-align: left;
       "
     >
