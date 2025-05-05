@@ -23,7 +23,7 @@ const currentImage = computed(() => Math.min(clicks.value, props.images.length -
       v-for="(src, idx) in images"
       :key="src"
       :src="src"
-      class="absolute inset-0 m-auto max-w-full max-h-full object-contain transition-opacity duration-500"
+      class="absolute inset-0 m-auto max-w-full max-h-full object-contain transition-opacity duration-1"
       :class="currentImage === idx ? 'opacity-100' : 'opacity-0'"
     />
   </div>
