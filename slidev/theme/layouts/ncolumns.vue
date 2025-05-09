@@ -8,6 +8,7 @@ const props = defineProps({
   images: { type: Array, default: () => [] },
   titles: { type: Array, default: () => [] },
   columns: { type: Number, default: 2 },
+  columnWidths: { type: Array, default: () => [] }, // New prop for fractional widths
   reference: { type: String, default: '' },
   headerHeight: { type: [String, Number], default: 7.5 },
   headingRowHeight: { type: [String, Number], default: 7.5 },
@@ -25,7 +26,13 @@ const gridTemplateRows = computed(() => {
   return `${header}% ${headingRow}% ${main}% ${textbox}% ${spacer}%`
 })
 
-const gridColumns = computed(() => `repeat(${props.columns}, 1fr)`)
+const gridColumns = computed(() => {
+  if (props.columnWidths.length === props.columns) {
+    return props.columnWidths.map(w => `${w}fr`).join(' ')
+  } else {
+    return `repeat(${props.columns}, 1fr)`
+  }
+})
 </script>
 
 <template>
@@ -50,18 +57,20 @@ const gridColumns = computed(() => `repeat(${props.columns}, 1fr)`)
         class="flex flex-col items-start justify-start p-4 gap-2 w-full h-full overflow-auto"
       >
         <!-- Image or Text Slot -->
-        <div class="flex flex-col justify-start items-center w-full h-full p-4 gap-4 overflow-hidden">
-          <img
-            v-if="images[index]"
-            :src="images[index]"
-            class="flex-grow flex justify-center items-center w-full h-full overflow-hidden rounded-xl"
-            style="height: 100%; max-height: 100%;"
-          />
+        <div class="w-full h-full flex justify-center items-center">
+      <img
+        v-if="images[index]"
+        :src="images[index]"
+        class="max-w-full max-h-full object-contain"
+        style="mask-image: radial-gradient(circle at center, black 100%, transparent 100%);
+              -webkit-mask-image: radial-gradient(circle at center, black 100%, transparent 100%);
+              border-radius: 1rem; overflow: hidden;"
+        alt=""
+      />
           <slot v-else :name="`col${index}`" />
         </div>
       </div>
     </div>
-
 
     <!-- Textbox Content -->
     <div class="text-left text-base leading-tight px-6">
