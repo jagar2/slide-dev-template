@@ -1,146 +1,97 @@
 <script setup>
+import { computed } from 'vue'
+import Layouttextbox from "../components/citation.vue"
+import SlideNumber from "../components/SlideNumber.vue"
+
 const props = defineProps({
-  titleText: {
-    type: String,
-    default: 'Default Title',
-  },
-  columns: {
-    type: Number,
-    default: 2,
-  },
-  images: {
-    type: Array,
-    default: () => [],
-  },
-  titles: {
-    type: Array,
-    default: () => [],
-  },
-  contentRatio: {
-    type: Number,
-    default: 80,
-    validator: (value) => value > 0 && value < 100
-  },
-  footerRatio: {
-    type: Number,
-    default: 10,
-    validator: (value) => value > 0 && value < 100
-  }
+  titleText: { type: String, default: 'Default Title' },
+  images: { type: Array, default: () => [] },
+  titles: { type: Array, default: () => [] },
+  columns: { type: Number, default: 2 },
+  reference: { type: String, default: '' },
+  headerHeight: { type: [String, Number], default: 7.5 },
+  headingRowHeight: { type: [String, Number], default: 7.5 },
+  mainHeight: { type: [String, Number], default: 55 },
+  textboxHeight: { type: [String, Number], default: 15 },
+  spacerHeight: { type: [String, Number], default: 10 }
 })
 
-// Calculate the header ratio based on content and footer ratios
-const headerRatio = 100 - props.contentRatio - props.footerRatio
+const gridTemplateRows = computed(() => {
+  const header = props.headerHeight
+  const headingRow = props.titles.length > 0 ? props.headingRowHeight : 0
+  const main = props.mainHeight + (props.titles.length > 0 ? 0 : props.headingRowHeight)
+  const textbox = props.textboxHeight
+  const spacer = props.spacerHeight
+  return `${header}% ${headingRow}% ${main}% ${textbox}% ${spacer}%`
+})
+
+const gridColumns = computed(() => `repeat(${props.columns}, 1fr)`)
 </script>
 
 <template>
-  <div class="slidev-layout ncolumns">
-    <!-- Title Section -->
-    <div class="title-section">
-      <div class="title-large">
-        {{ titleText }}
+  <div class="slidev-layout custom-layout" :style="{ gridTemplateRows }">
+    <!-- Title -->
+    <div class="flex flex-col justify-center gap-2">
+      <h1 class="title-large">{{ titleText }}</h1>
+    </div>
+
+    <!-- Column Headings -->
+    <div class="columns-headings" :style="{ gridTemplateColumns: gridColumns }">
+      <div v-for="(title, index) in titles" :key="`heading-${index}`" class="text-center text-2xl font-semibold text-[#2B90B6]">
+        {{ title }}
       </div>
     </div>
 
-    <!-- Main Content Section -->
-    <div class="main-content">
-      <div class="columns-container" :style="{ gridTemplateColumns: `repeat(${columns}, 1fr)`}">
-        <div v-for="(image, index) in images" :key="index" class="column">
-          <div v-if="titles[index]" class="column-title">
-            {{ titles[index] }}
-          </div>
-          <div class="image-container">
-            <img :src="image" class="proportional-image rounded-2xl border-image" />
-          </div>
-        </div>
+    <!-- Main Content -->
+    <div class="columns-main" :style="{ gridTemplateColumns: gridColumns }">
+      <div v-for="(image, index) in images" :key="`image-${index}`" class="flex flex-col items-center gap-2 p-2">
+        <img :src="image" class="max-w-full max-h-full object-contain rounded-xl border" style="height: 100%; max-height: 100%;" />
       </div>
     </div>
 
-    <!-- Footer Content Section -->
-    <div class="footer-content">
+    <!-- Textbox Content -->
+    <div class="text-left text-base leading-tight px-6">
       <slot name="text" />
     </div>
+
+    <!-- Reference -->
+    <div class="flex items-center justify-center w-full">
+      <Layouttextbox :reference="reference" />
+    </div>
+  </div>
+
+  <!-- Slide Number -->
+  <div class="custom-slide-number">
+    <SlideNumber />
   </div>
 </template>
 
 <style lang="postcss">
-.slidev-layout.ncolumns {
+.custom-ncolumns {
   @apply h-full w-full relative;
-  background-image: url("../assets/full-branding.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   display: grid;
-  grid-template-rows: v-bind('`${headerRatio}% ${props.contentRatio}% ${props.footerRatio}%`');
-}
-
-/* Title Section */
-.title-section {
-  grid-row: 1;
-  @apply px-10 py-2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border: 1px solid black;
-}
-
-.title-large {
-  @apply text-3xl font-bold;
-  color: #2B90B6;
-}
-
-/* Main Content Section */
-.main-content {
-  grid-row: 2;
-  @apply px-10 py-5 overflow-auto;
-  border: 1px solid black;
-  width: 100%;
-}
-
-.columns-container {
-  display: grid;
-  gap: 1rem;
-  height: 100%;
-  width: 100%;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
   gap: 0.5rem;
+}
+
+.columns-headings {
+  display: grid;
   width: 100%;
-}
-
-.column-title {
-  @apply text-xl font-semibold text-center;
-  color: #2B90B6;
-}
-
-.image-container {
-  flex: 1;
-  display: flex;
+  text-align: center;
   align-items: center;
-  justify-content: center;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  overflow: hidden;
+  justify-items: center;
+  padding: 0 1rem;
+}
+
+.columns-main {
+  display: grid;
   width: 100%;
+  height: 100%;
+  gap: 1rem;
+  padding: 0 1rem;
+  align-items: start;
 }
 
-.proportional-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+.custom-slide-number {
+  @apply absolute bottom-2 left-4 text-sm text-gray-500;
 }
-
-/* Footer Content Section */
-.footer-content {
-  grid-row: 3;
-  @apply px-10 py-5 overflow-auto;
-  border: 1px solid black;
-  text-align: left;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-</style> 
+</style>
