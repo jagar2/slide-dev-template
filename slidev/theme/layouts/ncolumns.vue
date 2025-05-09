@@ -45,14 +45,13 @@ const gridColumns = computed(() => {
 
     <!-- Column Headings -->
     <div class="columns-headings" :style="{ gridTemplateColumns: gridColumns }">
-      <div 
+      <h2 
         v-for="(title, index) in titles" 
         :key="`heading-${index}`" 
-        class="text-center text-2xl font-semibold text-[#2B90B6]"
         v-click="titleClicks[index]"
       >
         {{ title }}
-      </div>
+    </h2>
     </div>
 
     <!-- Main Content Section -->
@@ -120,7 +119,4 @@ const gridColumns = computed(() => {
   align-items: start;
 }
 
-.custom-slide-number {
-  @apply absolute bottom-2 left-4 text-sm text-gray-500;
-}
 </style>
