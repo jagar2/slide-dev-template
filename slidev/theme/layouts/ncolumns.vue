@@ -7,8 +7,9 @@ const props = defineProps({
   titleText: { type: String, default: 'Default Title' },
   images: { type: Array, default: () => [] },
   titles: { type: Array, default: () => [] },
+  titleClicks: { type: Array, default: () => [] }, // New prop for v-click numbers
   columns: { type: Number, default: 2 },
-  columnWidths: { type: Array, default: () => [] }, // New prop for fractional widths
+  columnWidths: { type: Array, default: () => [] },
   reference: { type: String, default: '' },
   headerHeight: { type: [String, Number], default: 7.5 },
   headingRowHeight: { type: [String, Number], default: 7.5 },
@@ -44,7 +45,12 @@ const gridColumns = computed(() => {
 
     <!-- Column Headings -->
     <div class="columns-headings" :style="{ gridTemplateColumns: gridColumns }">
-      <div v-for="(title, index) in titles" :key="`heading-${index}`" class="text-center text-2xl font-semibold text-[#2B90B6]">
+      <div 
+        v-for="(title, index) in titles" 
+        :key="`heading-${index}`" 
+        class="text-center text-2xl font-semibold text-[#2B90B6]"
+        v-click="titleClicks[index]"
+      >
         {{ title }}
       </div>
     </div>
@@ -58,15 +64,15 @@ const gridColumns = computed(() => {
       >
         <!-- Image or Text Slot -->
         <div class="w-full h-full flex justify-center items-center">
-      <img
-        v-if="images[index]"
-        :src="images[index]"
-        class="max-w-full max-h-full object-contain"
-        style="mask-image: radial-gradient(circle at center, black 100%, transparent 100%);
-              -webkit-mask-image: radial-gradient(circle at center, black 100%, transparent 100%);
-              border-radius: 1rem; overflow: hidden;"
-        alt=""
-      />
+          <img
+            v-if="images[index]"
+            :src="images[index]"
+            class="max-w-full max-h-full object-contain"
+            style="mask-image: radial-gradient(circle at center, black 100%, transparent 100%);
+                  -webkit-mask-image: radial-gradient(circle at center, black 100%, transparent 100%);
+                  border-radius: 1rem; overflow: hidden;"
+            alt=""
+          />
           <slot v-else :name="`col${index}`" />
         </div>
       </div>
