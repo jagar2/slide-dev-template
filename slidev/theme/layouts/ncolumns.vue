@@ -42,12 +42,26 @@ const gridColumns = computed(() => `repeat(${props.columns}, 1fr)`)
       </div>
     </div>
 
-    <!-- Main Content -->
+    <!-- Main Content Section -->
     <div class="columns-main" :style="{ gridTemplateColumns: gridColumns }">
-      <div v-for="(image, index) in images" :key="`image-${index}`" class="flex flex-col items-center gap-2 p-2">
-        <img :src="image" class="max-w-full max-h-full object-contain rounded-xl border" style="height: 100%; max-height: 100%;" />
+      <div
+        v-for="(col, index) in columns"
+        :key="`col-${index}`"
+        class="flex flex-col items-start justify-start p-4 gap-2 w-full h-full overflow-auto"
+      >
+        <!-- Image or Text Slot -->
+        <div class="flex-grow w-full h-full flex justify-center items-center">
+          <img
+            v-if="images[index]"
+            :src="images[index]"
+            class="max-w-full max-h-full object-contain rounded-xl border"
+            style="height: 100%; max-height: 100%;"
+          />
+          <slot v-else :name="`col${index}`" />
+        </div>
       </div>
     </div>
+
 
     <!-- Textbox Content -->
     <div class="text-left text-base leading-tight px-6">
