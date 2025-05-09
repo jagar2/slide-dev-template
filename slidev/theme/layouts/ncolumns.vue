@@ -15,7 +15,8 @@ const props = defineProps({
   headingRowHeight: { type: [String, Number], default: 7.5 },
   mainHeight: { type: [String, Number], default: 55 },
   textboxHeight: { type: [String, Number], default: 15 },
-  spacerHeight: { type: [String, Number], default: 10 }
+  spacerHeight: { type: [String, Number], default: 10 },
+  showBorders: { type: Boolean, default: false } // New prop for border control
 })
 
 const gridTemplateRows = computed(() => {
@@ -60,6 +61,7 @@ const gridColumns = computed(() => {
         v-for="(col, index) in columns"
         :key="`col-${index}`"
         class="flex flex-col items-start justify-start p-4 gap-2 w-full h-full overflow-auto"
+        :class="{ 'border-2 border-black': showBorders }"
       >
         <!-- Image or Text Slot -->
         <div class="w-full h-full flex justify-center items-center">
@@ -78,7 +80,7 @@ const gridColumns = computed(() => {
     </div>
 
     <!-- Textbox Content -->
-    <div class="text-left text-base leading-tight px-6">
+    <div class="text-left text-base leading-tight px-6" :class="{ 'border-2 border-black': showBorders }">
       <slot name="text" />
     </div>
 
@@ -118,5 +120,4 @@ const gridColumns = computed(() => {
   padding: 0 1rem;
   align-items: start;
 }
-
 </style>
