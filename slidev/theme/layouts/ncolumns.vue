@@ -50,11 +50,11 @@ const gridColumns = computed(() => `repeat(${props.columns}, 1fr)`)
         class="flex flex-col items-start justify-start p-4 gap-2 w-full h-full overflow-auto"
       >
         <!-- Image or Text Slot -->
-        <div class="flex-grow w-full h-full flex justify-center items-center">
+        <div class="flex flex-col justify-start items-center w-full h-full p-4 gap-4 overflow-hidden">
           <img
             v-if="images[index]"
             :src="images[index]"
-            class="max-w-full max-h-full object-contain rounded-xl border"
+            class="flex-grow flex justify-center items-center w-full h-full overflow-hidden rounded-xl"
             style="height: 100%; max-height: 100%;"
           />
           <slot v-else :name="`col${index}`" />
