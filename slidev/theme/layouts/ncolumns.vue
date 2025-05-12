@@ -64,18 +64,23 @@ const gridColumns = computed(() => {
         :class="{ 'border-2 border-black': showBorders }"
       >
         <!-- Image or Text Slot -->
-        <div class="w-full h-full flex justify-center items-center">
-          <img
-            v-if="images[index]"
-            :src="images[index]"
-            class="max-w-full max-h-full object-contain"
-            style="mask-image: radial-gradient(circle at center, black 100%, transparent 100%);
-                  -webkit-mask-image: radial-gradient(circle at center, black 100%, transparent 100%);
-                  border-radius: 1rem; overflow: hidden;"
-            alt=""
-            v-click="titleClicks[index]"
-          />
-          <slot v-else :name="`col${index}`" />
+        <div class="w-full h-full flex flex-col justify-center items-center gap-4">
+          <div class="flex justify-center items-center">
+            <img
+              v-if="images[index]"
+              :src="images[index]"
+              class="max-w-full max-h-full object-contain"
+              style="mask-image: radial-gradient(circle at center, black 100%, transparent 100%);
+                    -webkit-mask-image: radial-gradient(circle at center, black 100%, transparent 100%);
+                    border-radius: 1rem; overflow: hidden;"
+              alt=""
+              v-click="titleClicks[index]"
+            />
+            <slot v-else :name="`col${index}`" />
+          </div>
+          <div class="w-full text-center">
+            <slot :name="`col${index}-text`" />
+          </div>
         </div>
       </div>
     </div>
