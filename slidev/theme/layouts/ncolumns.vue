@@ -60,7 +60,7 @@ const gridColumns = computed(() => {
       <div
         v-for="(col, index) in columns"
         :key="`col-${index}`"
-        class="flex flex-col items-start justify-start p-4 gap-2 w-full h-full overflow-auto"
+        class="flex flex-col items-start justify-start p-4 gap-2 w-full h-full"
         :class="{ 'border-2 border-black': showBorders }"
       >
         <!-- Image or Text Slot -->
