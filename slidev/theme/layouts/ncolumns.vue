@@ -73,6 +73,7 @@ const gridColumns = computed(() => {
                   -webkit-mask-image: radial-gradient(circle at center, black 100%, transparent 100%);
                   border-radius: 1rem; overflow: hidden;"
             alt=""
+            v-click="titleClicks[index]"
           />
           <slot v-else :name="`col${index}`" />
         </div>
