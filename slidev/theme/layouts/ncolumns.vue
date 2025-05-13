@@ -16,7 +16,8 @@ const props = defineProps({
   mainHeight: { type: [String, Number], default: 55 },
   textboxHeight: { type: [String, Number], default: 15 },
   spacerHeight: { type: [String, Number], default: 10 },
-  showBorders: { type: Boolean, default: false } // New prop for border control
+  showBorders: { type: Boolean, default: false }, // New prop for border control
+  roundedEdges: { type: Boolean, default: true } // New prop for rounded edges control
 })
 
 const gridTemplateRows = computed(() => {
@@ -69,9 +70,12 @@ const gridColumns = computed(() => {
             v-if="images[index]"
             :src="images[index]"
             class="max-w-full max-h-full object-contain"
-            style="mask-image: radial-gradient(circle at center, black 100%, transparent 100%);
-                  -webkit-mask-image: radial-gradient(circle at center, black 100%, transparent 100%);
-                  border-radius: 1rem; overflow: hidden;"
+            :style="{
+              maskImage: 'radial-gradient(circle at center, black 100%, transparent 100%)',
+              WebkitMaskImage: 'radial-gradient(circle at center, black 100%, transparent 100%)',
+              borderRadius: roundedEdges ? '1rem' : '0',
+              overflow: 'hidden'
+            }"
             alt=""
             v-click="titleClicks[index]"
           />
@@ -87,7 +91,7 @@ const gridColumns = computed(() => {
 
     <!-- Reference -->
     <div class="flex items-center justify-center w-full">
-      <Layouttextbox :reference="reference" />
+      <Layouttextbox class="slidev-layout-reference" :reference="reference" />
     </div>
   </div>
 
