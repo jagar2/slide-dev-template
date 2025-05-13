@@ -63,7 +63,7 @@ const gridTemplateRows = computed(() => {
 
     <!-- Footer/Spacer -->
   <div class="absolute bottom-[10px] left-1/2 -translate-x-1/2">
-    <span>{{ reference }}</span>
+    <span class="slidev-layout-reference">{{ reference }}</span>
   </div>
 </template>
 

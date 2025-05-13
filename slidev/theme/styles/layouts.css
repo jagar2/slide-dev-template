@@ -86,3 +86,9 @@
   background-position: center;
   background-size: cover;
 }
+
+.slidev-layout-reference {
+  font-family: var(--slidev-font-h4);
+  color: #685D79;
+  font-size: 0.6rem;
+}
