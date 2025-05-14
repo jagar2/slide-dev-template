@@ -92,9 +92,16 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Poppins";
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 :root {
---slidev-font-h1: 'AxiaStencilBlack';
+--slidev-font-h1: 'Poppins';
 --slidev-font-h2: 'Papernotes';
 --slidev-font-h3: 'Inter';
 --slidev-font-h4: 'interitalic';
