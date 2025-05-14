@@ -90,8 +90,8 @@ const gridColumns = computed(() => {
     </div>
 
     <!-- Reference -->
-    <div class="absolute bottom-[10px] left-1/2 -translate-x-1/2">
-      <Layouttextbox class="slidev-layout-reference" :reference="reference" />
+      <div class="absolute bottom-[10px] left-1/2 -translate-x-1/2">
+    <span class="slidev-layout-reference">{{ reference }}</span>
     </div>
   </div>
 
