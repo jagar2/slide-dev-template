@@ -2,7 +2,7 @@
   h1 {
     font-family: var(--slidev-font-h1);
     color: #07294D;
-
+    font-size: 3rem !important;
   }
   
   h2 {
@@ -67,8 +67,8 @@
   @apply text-left font-bold text-primary text-5xl;
   font-family: var(--slidev-font-h1);
   margin: 0;
-  padding: 0.2em 0;
-  font-size: 2.5rem !important;
+  padding: 0.5em 0;
+  font-size: 2.2rem !important;
   background-color: #07294D;
   background-image: linear-gradient(45deg, #006699 0%,  #07294D 2%);
   background-size: 100%;

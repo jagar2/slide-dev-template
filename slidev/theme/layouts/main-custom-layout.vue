@@ -28,8 +28,8 @@ const gridTemplateRows = computed(() => {
 <template>
   <div class="slidev-layout custom-layout" :style="{ gridTemplateRows }">
     <!-- Header -->
-    <div class="flex flex-col justify-center gap-2">
-      <h1 class="title-large">{{ titleText }}</h1>
+    <div class="flex flex-col justify-center gap-2 ml-[-1rem]">
+      <div class="title-large">{{ titleText }}</div>
     </div>
 
     <!-- Subtitle (conditionally hidden but always rendered) -->
