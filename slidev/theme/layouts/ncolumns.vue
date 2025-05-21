@@ -65,7 +65,7 @@ const gridColumns = computed(() => {
         :class="{ 'border-2 border-black': showBorders }"
       >
         <!-- Image or Text Slot -->
-        <div class="w-full h-full flex justify-center items-center">
+        <div class="w-full h-full flex flex-col justify-center items-center">
           <img
             v-if="images[index]"
             :src="images[index]"
