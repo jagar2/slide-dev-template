@@ -8,7 +8,7 @@
 
 <style lang="postcss">
 .slidev-layout.cover {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
     url("../assets/coverimage.png");
   background-repeat: no-repeat;
   background-position: center;
