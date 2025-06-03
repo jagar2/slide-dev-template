@@ -7,7 +7,7 @@ const props = defineProps({
   titleText: { type: String, default: 'Default Title' },
   images: { type: Array, default: () => [] },
   titles: { type: Array, default: () => [] },
-  titleClicks: { type: Array, default: () => [] }, // New prop for v-click numbers
+  titleClicks: { type: Array, default: () => [] },
   columns: { type: Number, default: 2 },
   columnWidths: { type: Array, default: () => [] },
   reference: { type: String, default: '' },
@@ -16,8 +16,8 @@ const props = defineProps({
   mainHeight: { type: [String, Number], default: 55 },
   textboxHeight: { type: [String, Number], default: 15 },
   spacerHeight: { type: [String, Number], default: 10 },
-  showBorders: { type: Boolean, default: false }, // New prop for border control
-  roundedEdges: { type: Boolean, default: true } // New prop for rounded edges control
+  showBorders: { type: Boolean, default: false },
+  roundedEdges: { type: Boolean, default: true }
 })
 
 const gridTemplateRows = computed(() => {
@@ -47,13 +47,13 @@ const gridColumns = computed(() => {
 
     <!-- Column Headings -->
     <div class="columns-headings" :style="{ gridTemplateColumns: gridColumns }">
-      <h2 
-        v-for="(title, index) in titles" 
-        :key="`heading-${index}`" 
+      <h2
+        v-for="(title, index) in titles"
+        :key="`heading-${index}`"
         v-click="titleClicks[index]"
       >
         {{ title }}
-    </h2>
+      </h2>
     </div>
 
     <!-- Main Content Section -->
@@ -64,7 +64,6 @@ const gridColumns = computed(() => {
         class="flex flex-col items-start justify-start p-4 gap-2 w-full h-full overflow-auto"
         :class="{ 'border-2 border-black': showBorders }"
       >
-        <!-- Image or Text Slot -->
         <div class="w-full h-full flex flex-col justify-center items-center">
           <img
             v-if="images[index]"
@@ -79,7 +78,9 @@ const gridColumns = computed(() => {
             alt=""
             v-click="titleClicks[index]"
           />
-          <slot v-else :name="`col${index}`" />
+          <div v-else v-click="titleClicks[index]" class="w-full h-full">
+            <slot :name="`col${index}`" />
+          </div>
         </div>
       </div>
     </div>
@@ -91,7 +92,7 @@ const gridColumns = computed(() => {
 
     <!-- Reference -->
     <div class="absolute bottom-[10px] left-1/2 -translate-x-1/2 leading-none">
-    <span class="slidev-layout-reference">{{ reference }}</span>
+      <span class="slidev-layout-reference">{{ reference }}</span>
     </div>
   </div>
 
